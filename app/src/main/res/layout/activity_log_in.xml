@@ -3,62 +3,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/img"
     android:layout_height="match_parent"
     tools:context=".LogIn.LogIn">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/etUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:hint="Username"
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/etUsername"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:minHeight="48dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="25dp"
-                android:layout_marginLeft="100dp"
-                android:layout_below="@+id/etPassword"
-                android:layout_gravity="center"
-                android:text="Log In" />
+                android:layout_marginBottom="20dp"
+                android:hint="Username"
+                android:minHeight="48dp" />
 
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/etPassword"
-                android:layout_gravity="center"
-                android:text="Register" />
+                android:layout_marginBottom="20dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="25dp"
+                    android:text="Log In"
+                    android:background="@drawable/rounded_button"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register"
+                    android:background="@drawable/rounded_button"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
         </LinearLayout>
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

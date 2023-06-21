@@ -23,6 +23,7 @@ public class CarritoActivity extends AppCompatActivity {
     private RecyclerView recyclerViewCart;
     private CartAdapter cartAdapter;
     private List<Combo> cartItems;
+
     private CarritoDatabaseHelper databaseHelper;
 
     private Button btnBuy;
@@ -97,6 +98,17 @@ public class CarritoActivity extends AppCompatActivity {
                         finish(); // Opcional: Finaliza la actividad actual si no se desea volver a ella
                     }
                 }, 2000); // Retraso de 2 segundos (2000 milisegundos)
+            }
+        });
+
+        cartAdapter.setOnItemClickListener(new CartAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Combo combo) {
+                // Elimina el combo del carrito
+                databaseHelper.eliminarCombo(combo);
+                // Actualiza la lista de combos
+                cartItems.remove(combo);
+                cartAdapter.notifyDataSetChanged();
             }
         });
     }

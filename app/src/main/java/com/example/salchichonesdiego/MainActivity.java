@@ -45,9 +45,20 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewCombos.setAdapter(comboAdapter);
 
         // Ejemplo de agregar combos de salchichas
-        combos.add(new Combo("Combo 1", 9.99, "Descripción del Combo 1", "Salchicha A, Salchicha B"));
-        combos.add(new Combo("Combo 2", 12.99, "Descripción del Combo 2", "Salchicha C, Salchicha D"));
-        combos.add(new Combo("Combo 3", 8.99, "Descripción del Combo 3", "Salchicha E, Salchicha F"));
+        combos.add(new Combo("Salchichas Pequeñas", 9.99, "Estas Salchicas son tan pequeñas que entraran en cualquier lugar", "Salchicha enana 10 Unidades"));
+        combos.add(new Combo("Salchichas Enormes", 12.99, "Solo los valientes puede comer todas estas salchicas", "Salchicha Garagantuan 3 unidades"));
+        combos.add(new Combo("Salchichas Raras", 8.99, "?????????", "Un Misterio"));
+        combos.add(new Combo("Salchicha Clásica", 6.99, "La salchicha clásica de siempre", "Salchicha 100% carne de res 5 unidades"));
+        combos.add(new Combo("Salchicha Picante", 7.99, "Una salchicha con un toque de picante", "Salchicha picante 6 unidades"));
+        combos.add(new Combo("Salchicha de Pollo", 5.99, "Deliciosa salchicha hecha de carne de pollo", "Salchicha de pollo 8 unidades"));
+        combos.add(new Combo("Salchicha Vegetariana", 8.99, "Una opción vegetariana sin carne", "Salchicha vegetariana a base de soja 4 unidades"));
+        combos.add(new Combo("Salchicha de Tofu", 9.99, "Salchicha hecha a base de tofu", "Salchicha de tofu 6 unidades"));
+        combos.add(new Combo("Salchicha de Pavo", 7.99, "Salchicha de pavo baja en grasa", "Salchicha de pavo 10 unidades"));
+        combos.add(new Combo("Salchicha Ahumada", 8.99, "Salchicha ahumada con un sabor intenso", "Salchicha ahumada 8 unidades"));
+        combos.add(new Combo("Salchicha de Cordero", 9.99, "Salchicha elaborada con carne de cordero", "Salchicha de cordero 6 unidades"));
+        combos.add(new Combo("Salchicha de Cerdo", 7.99, "Salchicha jugosa de cerdo", "Salchicha de cerdo 12 unidades"));
+        combos.add(new Combo("Salchicha de Ternera", 8.99, "Salchicha tierna y sabrosa de ternera", "Salchicha de ternera 8 unidades"));
+
 
         // Verificar si hay combos seleccionados almacenados en savedInstanceState
         if (savedInstanceState != null) {

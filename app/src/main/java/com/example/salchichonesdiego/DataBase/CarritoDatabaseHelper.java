@@ -68,6 +68,11 @@ public class CarritoDatabaseHelper extends SQLiteOpenHelper {
         return combos;
     }
 
+    public void eliminarCombo(Combo combo) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE_NAME, COLUMN_COMBO_NAME + "=?", new String[]{combo.getNombre()});
+    }
+
     public void eliminarCombos() {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_NAME, null, null);

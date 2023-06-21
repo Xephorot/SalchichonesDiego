@@ -16,6 +16,7 @@ import java.util.List;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
 
     private List<Combo> cartItems;
+    private OnItemClickListener onItemClickListener;
 
     public CartAdapter(List<Combo> cartItems) {
         this.cartItems = cartItems;
@@ -33,11 +34,24 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         Combo combo = cartItems.get(position);
         holder.comboNameTextView.setText(combo.getNombre());
         holder.comboPriceTextView.setText(String.valueOf(combo.getPrecio()));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(combo);
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return cartItems.size();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     public static class CartViewHolder extends RecyclerView.ViewHolder {
@@ -51,5 +65,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             comboPriceTextView = itemView.findViewById(R.id.comboPriceTextView);
         }
     }
-}
 
+    public interface OnItemClickListener {
+        void onItemClick(Combo combo);
+    }
+}
